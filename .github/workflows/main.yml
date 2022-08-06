@@ -25,5 +25,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           message: |
-            ** WARNING - You are committing to changes to resources folder. Please validate if the necessary properties are committed to both India and UAE Properties files **
+            ** WARNING - You are committing changes to properties files under the resources folder. Please validate if the necessary properties are committed to both India and UAE Properties files. Failure to validate can cause servers to fail during startup and thereby cause potential business loss. **
+          reactions: eyes  
           allow-repeats: true
