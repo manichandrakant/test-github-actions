@@ -25,5 +25,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           message: |
-            ** WARNING - You are committing to README.md file. Please check for grammatical errors before you merge the PR **
+            ** WARNING - You are committing to changes to resources folder. Please validate if the necessary properties are committed to both India and UAE Properties files **
           allow-repeats: true
