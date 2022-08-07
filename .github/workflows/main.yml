@@ -1,10 +1,17 @@
-# This is a basic workflow to help you get started with Actions
+# This Github Actions Workflow is intended to add a Warning comment on any PR which commits changes
+# to any property files in India and UAE folders in OrderManagementService repository.
 
-name: CI
+# We want to warn the developers committing changes to properties files in OrderManagementService when
+# 1. They raise a PR against main branch
+# 2. When the PR gets merged to the main branch
 
-# Controls when the workflow will run
+# Author: manichandrakant.velamuri@theporter.in
+
+name: warn-developers-when-committing-to-properties-files-in-oms
+
+# on is a trigger and Controls when the workflow will run
+# This workflow is triggered on push or pull request events but only for the "main" branch
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
     paths: [ "src/main/resources/**/*" ]
@@ -12,12 +19,10 @@ on:
     branches: [ "main" ]
     paths: [ "src/main/resources/**/*" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  test:
+# our job name is warn-devs
+  warn-devs:
     runs-on: ubuntu-latest
     steps:
       - uses: mshick/add-pr-comment@v1
@@ -26,5 +31,4 @@ jobs:
         with:
           message: |
             :eyes: WARNING - You are committing changes to properties files under the resources folder. Please validate if the necessary properties are committed to both India and UAE Properties files. Failure to validate can cause servers to fail during startup and thereby cause potential business loss. :eyes:
-          reactions: eyes
           allow-repeats: true
