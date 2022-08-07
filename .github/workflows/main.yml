@@ -19,10 +19,10 @@ name: warn-developers-when-committing-to-properties-files-in-oms
 # This workflow is triggered on push or pull request events but only for the "main" branch
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master", "main" ]
     paths: [ "src/main/resources/**/*" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master", "main" ]
     paths: [ "src/main/resources/**/*" ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
