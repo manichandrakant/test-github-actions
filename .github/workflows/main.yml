@@ -7,6 +7,12 @@
 
 # Author: manichandrakant.velamuri@theporter.in
 
+# @@@@@ Note for future considerations @@@@@
+# Any international launches in the future can add more folders containing properties files.
+# The current path filter will only cater to properties files that are under the "" folder.
+# Any source folders containing property files getting added in other places in the OrderManagementRepository,   should be added to the path filter. 
+# The paths element under push or pull_request is an array and can accept multiple entries separated by commas.
+
 name: warn-developers-when-committing-to-properties-files-in-oms
 
 # on is a trigger and Controls when the workflow will run
